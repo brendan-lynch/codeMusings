@@ -36,6 +36,11 @@ public class BST {
         root = deleteRecursive(root, value);
     }
 
+    public Node getRoot()
+    {
+        return root;
+    }
+
     private Node deleteRecursive(Node node, int value)
     {
         if(node == null)
