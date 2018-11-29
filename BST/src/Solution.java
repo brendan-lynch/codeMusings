@@ -2,6 +2,23 @@ public class Solution {
 
     public static void main(String[] args)
     {
+        // Find the least common ancestor of two nodes.
+        BST bst = new BST(20);
+        bst.insert(8);
+        bst.insert(4);
+        bst.insert(12);
+        bst.insert(10);
+        bst.insert(14);
+        bst.insert(22);
+
+        LCA lca = new LCA(bst);
+        System.out.println(lca.solve(10, 14) + " == 12");
+        System.out.println(lca.solve(12, 14) + " == 12");
+        System.out.println(lca.solve(8, 22) + " == 20");
+    }
+
+    public static void treeTest()
+    {
         BST bst = new BST(10);
         bst.insert(7);
         bst.insert(12);
