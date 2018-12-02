@@ -1,5 +1,38 @@
+import java.util.List;
+
 public class Solution {
     public static void main(String[] args)
+    {
+        BT bt = new BT(10);
+        bt.insert(15);
+        bt.insert(7);
+        bt.insert(4);
+        bt.insert(2);
+        bt.insert(3);
+
+        // Serialize Binary Tree with delimiter '-1'
+        Serialize s = new Serialize();
+        List<Integer> withDelimiter = s.doSerializeWithDelimiter(bt);
+
+        bt.inOrder();
+        System.out.print("= ");
+        s.doDeserializeWithDelimiter(withDelimiter).inOrder();
+        System.out.println();
+
+        withDelimiter = s.doSerializeWithDelimiterOptimal(bt);
+        for(int i : withDelimiter)
+        {
+            System.out.print(i + " ");
+        }
+
+        System.out.println();
+        bt.inOrder();
+        System.out.print("= ");
+        s.doDeserializeWithDelimiterOptimal(withDelimiter).inOrder();
+        System.out.println();
+    }
+
+    public static void LCA(String[] args)
     {
         BT bt = new BT(10);
         bt.insert(15);
