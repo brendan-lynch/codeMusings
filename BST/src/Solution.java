@@ -1,6 +1,34 @@
+import java.util.List;
+
 public class Solution {
 
     public static void main(String[] args)
+    {
+        BST bst = new BST(20);
+        bst.insert(8);
+        bst.insert(4);
+        bst.insert(12);
+        bst.insert(10);
+        bst.insert(14);
+        bst.insert(22);
+
+        Serlialize s = new Serlialize();
+        List<Integer> list = s.doSerialize(bst);
+        bst.preOrder();
+        System.out.print(" = ");
+        for(int i : list)
+        {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        bst.inOrder();
+        System.out.print(" = ");
+        BST bst2 = s.doDeserialize(list);
+        bst2.inOrder();
+    }
+
+    public static void LCA()
     {
         // Find the least common ancestor of two nodes.
         BST bst = new BST(20);
